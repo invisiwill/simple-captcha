@@ -57,7 +57,12 @@ module SimpleCaptcha
 
   class << self
     def store
-      @store || 'active_record'
+      @store || 'redis'
+      instance_eval %q{
+          mattr_accessor :redis, :expire
+          @@redis = nil
+          @@expire = 3600
+        }'
     end
 
     def store=(type)
