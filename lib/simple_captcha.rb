@@ -60,8 +60,7 @@ module SimpleCaptcha
       @store || 'redis'
       instance_eval %q{
           mattr_accessor :redis, :expire
-          @@redis = nil
-          @@expire = 3600
+
         }
     end
 
