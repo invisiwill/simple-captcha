@@ -62,7 +62,7 @@ module SimpleCaptcha
           mattr_accessor :redis, :expire
           @@redis = nil
           @@expire = 3600
-        }'
+        }
     end
 
     def store=(type)
